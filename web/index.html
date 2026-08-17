@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>DSH 手机遥控</title>
+  <link rel="manifest" href="/m/manifest.webmanifest" />
+  <link rel="icon" href="/m/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/m/style.css" />
+</head>
+<body>
+  <!-- 登录 -->
+  <section id="login" class="screen hidden">
+    <div class="login-card">
+      <div class="login-logo">🛰️</div>
+      <h1>DSH 手机遥控</h1>
+      <p class="login-sub">远程连接你的 DeepSeek Harness</p>
+      <form id="login-form" autocomplete="off">
+        <input id="login-password" type="password" inputmode="text" placeholder="访问密码" autocomplete="current-password" required />
+        <button type="submit" class="btn primary">连接</button>
+      </form>
+      <p id="login-error" class="login-error hidden"></p>
+    </div>
+  </section>
+
+  <!-- 主应用 -->
+  <section id="app" class="screen hidden">
+    <header id="topbar">
+      <button id="btn-back" class="icon-btn hidden" title="返回会话列表">☰</button>
+      <div id="topbar-title" class="topbar-title"></div>
+      <div class="topbar-actions">
+        <button id="btn-menu" class="icon-btn" title="菜单">⋯</button>
+      </div>
+    </header>
+
+    <!-- 会话列表 -->
+    <main id="sessions-view" class="view">
+      <div class="list-head">
+        <button id="btn-new-session" class="btn primary block">＋ 新建会话</button>
+      </div>
+      <ul id="session-list" class="session-list"></ul>
+      <p id="session-empty" class="empty-hint">还没有会话，点上方按钮新建一个</p>
+    </main>
+
+    <!-- 聊天 -->
+    <main id="chat-view" class="view hidden">
+      <div id="jobs-bar" class="jobs-bar hidden"></div>
+      <div id="messages" class="messages"></div>
+      <div id="todos" class="todos hidden"></div>
+      <div id="composer" class="composer">
+        <div class="composer-card">
+          <textarea id="input" rows="1" placeholder="输入消息，回车发送…"></textarea>
+          <button id="btn-send" class="send-btn" title="发送">
+            <span class="spinner-ring"></span>
+            <svg class="ic-send" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- 菜单 -->
+  <div id="menu-overlay" class="overlay hidden">
+    <div class="menu-sheet">
+      <button class="menu-item" id="menu-full">🌐 官方完整界面（新窗口）</button>
+      <button class="menu-item" id="menu-logout">🚪 退出登录</button>
+      <button class="menu-item" id="menu-close">✕ 关闭</button>
+    </div>
+  </div>
+
+  <!-- 模态层 -->
+  <div id="modal-root"></div>
+
+  <!-- 轻提示 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/m/app.js" defer></script>
+</body>
+</html>

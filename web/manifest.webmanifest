@@ -1,0 +1,14 @@
+{
+  "name": "DSH 手机遥控",
+  "short_name": "DSH遥控",
+  "description": "手机远程控制 DeepSeek Harness：聊天、执行任务、查看进度",
+  "start_url": "/m/",
+  "scope": "/m/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "icons": [
+    { "src": "/m/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
