@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# backups / logs
+*.bak
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editors
+.idea/
+.vscode/
+*.swp
+
+# npm
+*.tgz

@@ -1,0 +1,33 @@
+{
+  "name": "dsh-mobile-remote",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "web"
+  ],
+  "description": "DSH plugin: remote-control your DeepSeek Harness from your phone. Password-protected /m/ mobile UI + API reverse proxy (gzip / history pruning / origin rewrite).",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "mobile",
+    "remote",
+    "phone",
+    "cordis"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-github-username>/dsh-mobile-remote.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/schemastery": "^3.18.0"
+  }
+}
